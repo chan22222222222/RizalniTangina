@@ -1,0 +1,417 @@
+/*********************************************
+  Basic Reset and Variables
+**********************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    /* Adjusted or removed the strong blue color */
+    --hero-bg: linear-gradient(
+      to right,
+      #f5f5f5 0%,
+      #ececec 100%
+    );
+    --secondary-yellow: #fdd835;
+    --dark-text: #333333;
+    --light-text: #ffffff;
+    --bg-white: #ffffff;
+    --bg-light: #fafafa;
+    --accent-gold: #bf9b30;
+    --font-main: "Arial", sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    color: var(--dark-text);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+  }
+  
+  /*********************************************
+    Header Styles
+  **********************************************/
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-text);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: var(--accent-gold);
+  }
+  
+  /*********************************************
+    Hero Section
+  **********************************************/
+  .hero-section {
+    /* Changed from solid blue to a light gradient */
+    background: var(--hero-bg);
+    min-height: 60vh;
+    padding: 100px 40px 40px; /* account for fixed header */
+    color: var(--dark-text);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .hero-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+  
+  /* Statue Image */
+  .hero-image-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+  
+  /* Removed circle shape; now a simple box */
+  .hero-text-box {
+    background-color:  #d5c4a1;
+   
+    color: var(--dark-text);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    line-height: 1.4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    flex: 1;
+  }
+  
+  .hero-text-box p {
+    margin-bottom: 15px;
+  }
+  
+  /*********************************************
+    Main Content (Analysis Section)
+  **********************************************/
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--bg-white);
+    margin-top: 0;
+  }
+  
+  .analysis-section {
+    margin-bottom: 40px;
+    text-align: left;
+    margin-top: 20px; /* Some spacing below the hero */
+  }
+  
+  .analysis-section h2 {
+    font-size: 32px;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+  }
+  
+  .analysis-section article {
+    margin-bottom: 20px;
+  }
+  
+  .analysis-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+  }
+  
+  .analysis-section p {
+    margin-bottom: 10px;
+    color: var(--dark-text);
+  }
+  
+  /*********************************************
+    Quiz Modal Styles
+  **********************************************/
+  .quiz-time-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-gold);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .quiz-time-btn:hover {
+    background-color: #a88728;
+  }
+  
+  .quiz-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 9999;
+  }
+  
+  .quiz-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .quiz-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* Close Button (X) */
+  .quiz-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .quiz-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .quiz-slide.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .quiz-slide h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .quiz-slide p {
+    margin-bottom: 15px;
+  }
+  
+  .quiz-options {
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+  
+  .quiz-options li {
+    margin-bottom: 5px;
+  }
+  
+  .next-slide-btn,
+  .close-quiz-btn {
+    padding: 8px 16px;
+    background-color: var(--accent-gold);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .next-slide-btn:hover,
+  .close-quiz-btn:hover {
+    background-color: #a88728;
+  }
+  
+  /*********************************************
+    References Section
+  **********************************************/
+  .references {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .references h2 {
+    font-size: 24px;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+  }
+  
+  .references a {
+    color: var(--accent-gold);
+    text-decoration: none;
+  }
+  
+  .references a:hover {
+    color: var(--dark-text);
+  }
+  
+  /*********************************************
+    Did You Know Section
+  **********************************************/
+  .did-you-know {
+    background-color: var(--secondary-yellow);
+    color: var(--dark-text);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .did-you-know h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .did-you-know p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /*********************************************
+    Footer Styles
+  **********************************************/
+  .footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+    font-style: italic;
+  }
+  
+  .footer-link a {
+    text-decoration: none;
+    color: var(--dark-text);
+    transition: color 0.3s;
+  }
+  
+  .footer-link a:hover {
+    color: var(--accent-gold);
+  }
+  
+  /*********************************************
+    Responsive
+  **********************************************/
+  @media (max-width: 992px) {
+    .hero-content {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 32px;
+    }
+    .hero-image {
+      max-width: 200px;
+    }
+    .hero-text-box {
+      max-width: 400px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-subtitle {
+      font-size: 16px;
+    }
+    .hero-image {
+      max-width: 150px;
+    }
+    .hero-text-box {
+      padding: 15px;
+    }
+    .hero-text-box p {
+      font-size: 14px;
+    }
+  }
+  

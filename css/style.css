@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    border-bottom: 1px solid #fffefe;
+}
+.title {
+    color: white;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.5s ease;
+}
+nav ul li a:hover {
+    background: linear-gradient(45deg, #ee9a0a, #eecfda, #eec600);
+    background-size: 200% 200%;
+    animation: gradient 2s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    flex: 1;
+}
+.text {
+    max-width: 50%;
+}
+.text p:first-child,
+.text p:nth-child(2) {
+    background: linear-gradient(90deg, #F2AC14 4%, #FBFBFB 42%, #FFA909 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+}
+.text p:nth-child(3) {
+    color: white;
+    font-size: 20px;
+}
+.overview {
+    background: linear-gradient(90deg, #1D1700 0%, #836824 100%);
+    color: rgb(247, 244, 244);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    width: fit-content;
+}
+.additional-info {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1D1700 0%, #E0836824 50%, #1D1700 100%);
+    margin-top: 10px;
+    width: fit-content;
+}
+.image {
+    max-width: 48%;
+    margin-left: 20px;
+}
+.image img {
+    max-width: 70%;
+    height: auto;
+}

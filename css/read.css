@@ -1,0 +1,349 @@
+:root {
+    --primary-dark: #333333;
+    --primary-light: #FFFFFF;
+    --accent-gold: #BF9B30;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --bg-light-gray: #F5F5F5;
+}
+
+/* Add or update these styles in your read.css */
+
+.reading-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.back-to-works {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #a17f20;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-works:hover {
+    background: #8b6d1b;
+    transform: scale(1.1);
+}
+
+.bookmark-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #a17f20;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bookmark-btn:hover {
+    background: #8b6d1b;
+    transform: scale(1.1);
+}
+
+.continue-reading {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 1000;
+}
+
+.continue-reading button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #a17f20;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.continue-reading button:hover {
+    background: #8b6d1b;
+    transform: scale(1.1);
+}
+
+.read-content {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.book-reader {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.book-reader h1 {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.book-content {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.center-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.book-image-wrapper {
+    text-align: center;
+    margin: 20px auto 40px auto;
+    max-width: 250px; /* Adjust this value to make the image smaller or larger */
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.book-content {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .book-image-wrapper {
+        max-width: 200px; /* Slightly smaller on mobile devices */
+    }
+}
+
+.chapter {
+    margin-bottom: 2.5rem;
+}
+
+.chapter h2 {
+    color: #a17f20;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.chapter p {
+    margin-bottom: 1.2rem;
+}
+
+.reading-controls {
+    margin-bottom: 2rem;
+}
+
+.back-to-works {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #a17f20;
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-to-works:hover {
+    background: #8b6d1b;
+    transform: translateX(-5px);
+}
+
+.back-to-works span {
+    font-size: 1.2rem;
+}
+
+/* Bookmark styles */
+.bookmark-here-btn {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #a17f20;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bookmark-here-btn:hover {
+    background: #8b6d1b;
+    transform: translateY(-2px);
+}
+
+.continue-btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #a17f20;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.continue-btn:hover {
+    background: #8b6d1b;
+    transform: translateY(-2px);
+}
+
+.bookmark-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.bookmark-info small {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.bookmark-confirmation {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(161, 127, 32, 0.9);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    animation: fadeInOut 2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+@keyframes fadeInOut {
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    20% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    80% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+}
+
+/* Text selection styles */
+::selection {
+    background: rgba(161, 127, 32, 0.2);
+    color: var(--text-dark);
+}
+
+::-moz-selection {
+    background: rgba(161, 127, 32, 0.2);
+    color: var(--text-dark);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .book-reader {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .book-content {
+        font-size: 0.95rem;
+    }
+
+    .back-to-works {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .continue-btn {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.8rem;
+    }
+
+    .bookmark-here-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .book-reader h1 {
+        font-size: 1.5rem;
+    }
+
+    .chapter h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .back-to-works,
+    .continue-btn,
+    .bookmark-here-btn,
+    .bookmark-confirmation {
+        display: none;
+    }
+
+    .book-reader {
+        padding: 0;
+        max-width: none;
+    }
+
+    .book-content {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
