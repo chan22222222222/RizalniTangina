@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read - José Rizal's Works</title>
+    <link rel="stylesheet" href="css/read.css">
+</head>
+<body>
+
+    <div class="content read-content">
+        <div class="book-reader">
+            <div class="reading-controls">
+                <button class="back-to-works" onclick="window.location.href='Works.html'">
+                    ←
+                </button>
+                <button class="bookmark-btn" onclick="saveBookmark()">
+                    🔖 
+                </button>
+            </div>
+            <h1 id="bookTitle" class="center-title">The Philippines a Century Hence</h1>
+            
+            <!-- Centered book image container -->
+            <div class="book-image-wrapper">
+                <img src="image/The Philippines a Century Hence.jpg" alt="The Philippines A Century Hence Book Cover" class="book-cover">
+            </div>
+            
+            <div id="bookContent" class="book-content">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+        <div id="continueReading" class="continue-reading" style="display: none;">
+            <button onclick="loadBookmark()">
+                📖 Continue Reading
+            </button>
+        </div>
+    </div>
+
+    <script src="script/read.js"></script>
+</body>
+</html>
