@@ -326,11 +326,14 @@
     Did You Know Section
   **********************************************/
   .did-you-know {
-    background-color: var(--secondary-yellow);
+    background-color: #d5c4a1; /* Same as hero-text-box */
     color: var(--dark-text);
     text-align: center;
-    padding: 40px 20px;
-    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 40px auto; /* Centers the box and adds vertical spacing */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
   
   .did-you-know h2 {
@@ -339,11 +342,11 @@
   }
   
   .did-you-know p {
-    max-width: 800px;
-    margin: 0 auto;
     font-size: 18px;
     line-height: 1.6;
+    margin: 0 auto;
   }
+  
   
   /*********************************************
     Footer Styles
